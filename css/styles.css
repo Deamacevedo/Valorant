@@ -390,3 +390,30 @@ body.no-scroll {
     }
 
 }
+
+/* Seccion Agentes */
+@media screen and (max-width: 768px) {
+            #agentes-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 columnas en móvil */
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+
+            .agent-card {
+                width: 100% !important;
+                /* Fuerza que ocupe todo el espacio */
+                height: auto !important;
+            }
+
+            .agent-card img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+
+            .agent-card p {
+                font-size: 1rem;
+            }
+        }
