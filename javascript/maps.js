@@ -1,3 +1,67 @@
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const body = document.body;
+let scrollPosition = 0;
+
+menuToggle.addEventListener('click', () => {
+    if (mobileMenu.classList.contains('active')) {
+        // Cerrar menú - restaurar posición
+        mobileMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+        body.classList.remove('no-scroll');
+        body.style.removeProperty('overflow');
+        body.style.removeProperty('position');
+        body.style.removeProperty('top');
+        body.style.removeProperty('width');
+        window.scrollTo(0, scrollPosition);
+    } else {
+        // Abrir menú - guardar posición actual
+        scrollPosition = window.scrollY;
+        mobileMenu.classList.add('active');
+        menuToggle.classList.add('active');
+        body.classList.add('no-scroll');
+        body.style.overflow = 'hidden';
+        body.style.position = 'fixed';
+        body.style.top = `-${scrollPosition}px`;
+        body.style.width = '100%';
+    }
+});
+
+// Cerrar menú al hacer click en enlaces
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Restaurar body primero
+        body.classList.remove('no-scroll');
+        body.style.removeProperty('overflow');
+        body.style.removeProperty('position');
+        body.style.removeProperty('top');
+        body.style.removeProperty('width');
+
+        // Cerrar menú
+        mobileMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+
+        // Scroll suave al destino después de restaurar el body
+        setTimeout(() => {
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+
+                history.pushState(null, null, targetId);
+            }
+        }, 20);
+    });
+});
 // Efecto scroll del header
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
