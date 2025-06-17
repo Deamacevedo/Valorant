@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rankings</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+
+<body class="bg-cover bg-fixed bg-no-repeat bg-gray-900 min-h-screen -z-30 "
+    style="background-image: url('../assets/img/fondoprincipal.webp')">
+
+    <header
+            class="fixed top-0 left-0 w-full h-[100px] px-8 md:px-28 flex items-center justify-between z-50 transition-all duration-300">
+            <!-- Logo -->
+            <a href="../index.html">
+                <img class="w-auto h-[50px]" src="../assets/img/Logoinicio.png" alt="Valorant Logo" />
+            </a>
+
+            <!-- Menú Desktop -->
+            <nav class="desktop-nav hidden md:flex space-x-6" style="font-family: 'Tungsten';">
+                <a href="./agentes.html"
+                    class="text-white text-3xl lg:text-5xl font-normal  hover:text-red-500 transition-colors duration-300">Agents</a>
+                <a href="./mapas.html"
+                    class="text-white text-3xl lg:text-5xl font-normal  hover:text-red-500 transition-colors duration-300">Maps</a>
+                <a href="./rankings.html"
+                    class="text-white text-3xl lg:text-5xl font-normal  hover:text-red-500 transition-colors duration-300">Competitive</a>
+                <a href="./gamemodes.html"
+                    class="text-white text-3xl lg:text-5xl font-normal  hover:text-red-500 transition-colors duration-300">Gamemodes</a>
+                <a href="./armas.html"
+                    class="text-white text-3xl lg:text-5xl font-normal  hover:text-red-500 transition-colors duration-300">Weapons</a>
+            </nav>
+
+            <!-- Botón Hamburguesa -->
+            <button class="hamburger-btn md:hidden" id="menu-toggle">
+                ☰
+            </button>
+
+            <!-- Menú Mobile -->
+            <div class="mobile-menu md:hidden flex" id="mobile-menu">
+            <a href="./agentes.html" class="nav-link">Agents</a>
+            <a href="./maps.html" class="nav-link">Maps</a>
+            <a href="./rankings.html" class="nav-link">Competitive</a>
+            <a href="./gamemodes.html" class="nav-link">Gamemodes</a>
+            <a href="./armas.html" class="nav-link">Weapons</a>
+        </div>
+        </header>
+
+    <section id="competitive" class="py-24 px-16">
+        <h2 class="section-title justify-start text-center text-stone-200 text-7xl font-bold"
+        style="font-family: 'Montserrat';">CLIMB THE RANKS</h2>
+        <div id="rank-icons" class="flex flex-wrap justify-center gap-6"></div>
+
+        <div id="rank-info" class="mt-12 text-xl text-gray-300"></div>
+    </section>
+
+    <script src="../javascript/rankings.js"></script>
+
+
+</body>
+
+</html>
