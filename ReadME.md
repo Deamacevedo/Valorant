@@ -4,10 +4,17 @@ Este proyecto es una **landing page** interactiva basada en el videojuego **Valo
 
 ---
 
+## 🌐 Demo en línea
+
+Puedes ver el portafolio publicado en GitHub Pages aquí:  
+👉 [https://deamacevedo.github.io/Valorant/](https://deamacevedo.github.io/Valorant/)  
 
 ## 🎨 Maquetación en Figma
 
 El diseño del sitio fue realizado previamente en Figma, donde se definieron los colores, estructura general, disposición de secciones y estilo visual del contenido.
+
+**Puedes visualizarlo en el siguiente enlace**
+https://www.figma.com/design/wOjO06kANGjh3EdjS2yNOe/Valorant-API?node-id=0-1&t=W0JK0RHeFNoJT6id-1
 
 > 🔽 A continuación, se muestran algunas capturas del diseño realizado en Figma:
 
