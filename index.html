@@ -4,8 +4,308 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="text-white font-sans min-h-screen">
+
+    <!-- Header -->
+    <section class="w-full min-h-screen bg-cover bg-center" style="background-image: url('../assets/img/inicio.webp')">
+
+        <header
+            class="fixed top-0 left-0 w-full h-[100px] px-8 md:px-28 flex items-center justify-between z-50 transition-all duration-300">
+            <!-- Logo -->
+            <a href="../index.html">
+                <img class="w-auto h-[50px]" src="../assets/img/Logoinicio.png" alt="Valorant Logo" />
+            </a>
+
+            <!-- Menú Desktop -->
+            <nav class="desktop-nav hidden md:flex space-x-6" style="font-family: 'Tungsten';">
+                <a href="#agentes"
+                    class="text-white text-3xl lg:text-5xl font-normal  hover:text-red-500 transition-colors duration-300">Agents</a>
+                <a href="#maps"
+                    class="text-white text-3xl lg:text-5xl font-normal  hover:text-red-500 transition-colors duration-300">Maps</a>
+                <a href="#competitive"
+                    class="text-white text-3xl lg:text-5xl font-normal  hover:text-red-500 transition-colors duration-300">Competitive</a>
+                <a href="#gamemodes"
+                    class="text-white text-3xl lg:text-5xl font-normal  hover:text-red-500 transition-colors duration-300">Gamemodes</a>
+                <a href="#weapons"
+                    class="text-white text-3xl lg:text-5xl font-normal  hover:text-red-500 transition-colors duration-300">Weapons</a>
+            </nav>
+
+            <!-- Botón Hamburguesa -->
+            <button class="hamburger-btn md:hidden" id="menu-toggle">
+                ☰
+            </button>
+
+            <!-- Menú Mobile -->
+            <div class="mobile-menu md:hidden flex" id="mobile-menu">
+                <a href="#agentes" class="nav-link">Agents</a>
+                <a href="#maps" class="nav-link">Maps</a>
+                <a href="#competitive" class="nav-link">Competitive</a>
+                <a href="#gamemodes" class="nav-link">Gamemodes</a>
+                <a href="#weapons" class="nav-link">Weapons</a>
+            </div>
+        </header>
+
+        <div class="botondes absolute flex bottom-4 right-0 left-0 mx-auto z-20 justify-center drop-shadow-2xl ">
+            <svg width="50" height="18" viewBox="0 0 34 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true" class="_1smfa210" focusable="false"
+                style="color: #ff1f1fe7; translate: none; rotate: none; scale: none; transform: translate3d(0px, 0.1711px, 0px) scale(0.9957, 0.9957); opacity: 0.9872; visibility: inherit;">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M33.5609 1.54346C34.0381 2.5875 33.6881 3.87821 32.7791 4.42633L17.0387 13.9181L1.48663 4.42115C0.580153 3.86761 0.235986 2.57483 0.717909 1.53365C1.19983 0.492464 2.32535 0.097152 3.23182 0.650692L17.0497 9.08858L31.051 0.64551C31.96 0.0973872 33.0837 0.499411 33.5609 1.54346Z"
+                    fill="currentColor"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="bg-cover bg-fixed bg-no-repeat bg-gray-900 min-h-screen -z-30"
+        style="background-image: url('../assets/img/fondoprincipal.webp')">
+
+        <!-- Hero Section -->
+        <section
+            class="h-screen w-full relative z-0 flex items-center section-mobile md:section-desktop overflow-hidden">
+            
+            <div class="absolute right-0 top-0 h-full -z-10 bg-image-desktop hidden md:block">
+                
+                <img src="../assets/img/foto1xxd.webp" alt="Valorant Character"
+                    class="object-cover h-full w-full image-slide-right" />
+            </div>
+            
+            <img src="../assets/img/foto1xxd.webp" alt="Valorant Character"
+                class="bg-image-mobile md:hidden image-fade-scale" />
+
+            <div class="section-content inline-flex flex-col justify-center items-start gap-6 md:gap-24 z-20 relative">
+                <h2 class="text-4xl md:text-6xl font-extrabold title-reveal stragger-1">WE ARE VALORANT</h2>
+                <h3 class="text-lg md:text-xl lg:text-3xl uppercase font-semibold text-gray-300 fade-in-up stagger-2">
+                    DEFY THE LIMITS.</h3>
+                <p class="text-sm md:text-base leading-relaxed max-w-md text-gray-300 fade-in-up stagger-3">
+                    Blend your style and experience on a global, competitive stage. You have 13 rounds to attack and
+                    defend your side using sharp gunplay and tactical abilities.
+                </p>
+            </div>
+        </section>
+
+        <!-- Agentes -->
+        <section id="agentes" class="h-screen w-full relative z-0 flex items-center section-mobile md:section-desktop">
+            
+            <div class="absolute left-0 top-0 h-full -z-10 bg-image-desktop hidden md:block">
+                
+                <img src="../assets/img/fondoagentes.webp" alt="Valorant Agents"
+                    class="object-cover h-full w-full image-slide-left" />
+            </div>
+            
+            <img src="../assets/img/fondoagentes.webp" alt="Valorant Agents"
+                class="bg-image-mobile md:hidden image-fade-scale" />
+
+            <div
+                class="section-content right-aligned flex flex-col justify-center items-end gap-6 md:gap-24 z-20 text-right md:mr-44 relative">
+                <h2 class="text-4xl md:text-6xl font-extrabold title-reveal stagger-1">YOUR AGENTS</h2>
+                <h3
+                    class="text-lg md:text-xl lg:text-3xl uppercase font-semibold text-gray-300 fade-in-right stagger-2">
+                    CREATIVE IS YOUR
+                    GREATEST WEAPON.</h3>
+                <p class="text-sm md:text-base max-w-md text-gray-300  fade-in-right stagger-3">More than guns and
+                    bullets, you'll choose an
+                    Agent armed
+                    with adaptive, swift, and lethal abilities.</p>
+                <a href="./agentes.html" class="inline-block">
+                    <button
+                        class="cta-button  h-14 md:h-16 w-48 md:w-64 p-2 overflow-hidden relative bg-gray-800 text-white border-none flex items-center justify-center rounded-md text-2xl font-bold cursor-pointer z-10 group scale-in stagger-4"
+                        style="padding: 0;">
+                        Agents
+                        <span
+                            class="absolute w-72 h-32 -top-8 -left-4 bg-gray-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
+                        <span
+                            class="absolute w-72 h-32 -top-8 -left-4 bg-gray-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
+                        <span
+                            class="absolute w-72 h-32 -top-8 -left-4 bg-gray-600 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
+                        <span
+                            class="group-hover:opacity-100 group-hover:duration-1000 duration-100  justify-center text-center opacity-0 absolute top-4 left-12 z-10">View
+                            All Agents</span>
+                    </button>
+                </a>
+            </div>
+        </section>
+
+        <!-- Maps Section -->
+        <section id="maps"
+            class="h-screen w-full relative z-0 flex items-center section-mobile md:section-desktop overflow-hidden">
+            
+            <div class="absolute inset-0 -z-10 bg-image-desktop hidden md:block overflow-hidden">
+                
+                <img src="../assets/img/fondomapas.webp" alt="Valorant Map"
+                    class="object-cover h-full w-full image-reveal" />
+            </div>
+            
+            <img src="../assets/img/fondomapas.webp" alt="Valorant Map"
+                class="bg-image-mobile md:hidden image-fade-scale" />
+
+            <div class="section-content flex flex-col justify-center items-start gap-6 md:gap-24 z-20 relative">
+                <h2 class="text-white text-4xl md:text-6xl font-extrabold title-reveal stagger-1">YOUR MAPS</h2>
+                <h3 class="text-lg md:text-xl lg:text-3xl font-semibold uppercase text-gray-300 fade-in-left stagger-2">
+                    FIGHT AROUND THE WORLD.
+                </h3>
+                <p class="text-gray-300 max-w-md leading-relaxed fade-in-left stagger-3">
+                    Each map is a playground to showcase your creative thinking. Purpose-built for team strategies,
+                    spectacular plays, and clutch moments. Make the play others will imitate for years to come.
+                </p>
+                <a href="./mapas.html" class="inline-block">
+                    <button
+                        class="cta-button  h-14 md:h-16 w-48 md:w-64 p-2 overflow-hidden relative bg-gray-800 text-white border-none flex items-center justify-center rounded-md text-2xl font-bold cursor-pointer z-10 group scale-in stagger-4"
+                        style="padding: 0;">
+                        Maps
+                        <span
+                            class="absolute w-72 h-32 -top-8 -left-4 bg-gray-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
+                        <span
+                            class="absolute w-72 h-32 -top-8 -left-4 bg-gray-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
+                        <span
+                            class="absolute w-72 h-32 -top-8 -left-4 bg-gray-600 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
+                        <span
+                            class="group-hover:opacity-100 group-hover:duration-1000 duration-100  justify-center text-center opacity-0 absolute top-4 left-12 z-10">View
+                            All Maps</span>
+                    </button>
+                </a>
+            </div>
+        </section>
+
+        <!-- Competitive Section -->
+        <section id="competitive"
+            class="h-screen w-full relative z-0 flex items-center section-mobile md:section-desktop">
+            
+            <div class="absolute left-0 top-0 h-full -z-10 bg-image-desktop hidden md:block">
+                
+                <img src="../assets/img/fondorankings.webp" alt="Valorant Ranks"
+                    class="object-cover h-full w-full image-slide-left" />
+            </div>
+            
+            <img src="../assets/img/fondorankings.webp" alt="Valorant Ranks"
+                class="bg-image-mobile md:hidden image-fade-scale" />
+
+            <div
+                class="section-content right-aligned flex flex-col justify-center items-end gap-6 md:gap-24 z-20 text-right md:mr-44 relative">
+                <h2 class="text-white text-4xl md:text-6xl font-extrabold title-reveal stagger-1">CLIMB THE RANKS</h2>
+                <h3
+                    class="text-lg md:text-xl lg:text-3xl font-semibold uppercase text-gray-300 fade-in-right stagger-2">
+                    ONLY THE BEST REACH
+                    RADIANT.</h3>
+                <p class="text-gray-300 max-w-md leading-relaxed fade-in-right stagger-3">
+                    Valorant's ranked system is where you prove your skill and rise through the competitive ladder. From
+                    Iron to Radiant, each match is a battle for recognition and glory. Track your performance, analyze
+                    your
+                    growth, and face off against the fiercest opponents in tactical showdowns that demand precision and
+                    teamwork.
+                </p>
+                <a href="./rankings.html" class="inline-block">
+                    <button
+                        class="cta-button  h-14 md:h-16 w-48 md:w-64 p-2 overflow-hidden relative bg-gray-800 text-white border-none flex items-center justify-center rounded-md text-2xl font-bold cursor-pointer z-10 group scale-in stagger-4"
+                        style="padding: 0;">
+                        Rankings
+                        <span
+                            class="absolute w-72 h-32 -top-8 -left-4 bg-gray-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
+                        <span
+                            class="absolute w-72 h-32 -top-8 -left-4 bg-gray-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
+                        <span
+                            class="absolute w-72 h-32 -top-8 -left-4 bg-gray-600 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
+                        <span
+                            class="group-hover:opacity-100 group-hover:duration-1000 duration-100  justify-center text-center opacity-0 absolute top-4  z-10">View
+                            rankings</span>
+                    </button>
+                </a>
+            </div>
+        </section>
+
+        <!-- Gamemodes Section -->
+        <section id="gamemodes"
+            class="h-screen w-full relative z-0 flex items-center section-mobile md:section-desktop overflow-hidden">
+            
+            <div class="absolute right-0 top-0 h-full -z-10 bg-image-desktop hidden md:block">
+                
+                <img src="../assets/img/fondomodosjuego.webp" alt="Valorant Gamemodes"
+                    class="object-cover h-full w-full image-slide-right" />
+            </div>
+            
+            <img src="../assets/img/fondomodosjuego.webp" alt="Valorant Gamemodes"
+                class="bg-image-mobile md:hidden image-fade-scale" />
+
+            <div class="section-content flex flex-col justify-center items-start gap-6 md:gap-24 z-20 relative">
+                <h2 class="text-white text-4xl md:text-6xl font-extrabold title-reveal stagger-1">CHOOSE YOUR BATTLE
+                </h2>
+                <h3 class="text-lg md:text-xl lg:text-3xl font-semibold uppercase text-gray-300 fade-in-left stagger-2">
+                    VARIETY MEETS
+                    INTENSITY.</h3>
+                <p class="text-gray-300 max-w-md leading-relaxed fade-in-left stagger-3">
+                    Whether you seek the tension of Competitive, the fast pace of Spike Rush, or the raw reflex
+                    challenge of Deathmatch, Valorant offers modes that fit every style. Each one crafted for thrilling
+                    moments,
+                    strategy, and adrenaline. Find your favorite or master them all.
+                </p>
+                <a href="./gamemodes.html" class="inline-block">
+                    <button
+                        class="cta-button  h-14 md:h-16 w-48 md:w-64 p-2 overflow-hidden relative bg-gray-800 text-white border-none flex items-center justify-center rounded-md text-2xl font-bold cursor-pointer z-10 group scale-in stagger-4"
+                        style="padding: 0;">
+                        Gamemodes
+                        <span
+                            class="absolute w-72 h-32 -top-8 -left-4 bg-gray-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
+                        <span
+                            class="absolute w-72 h-32 -top-8 -left-4 bg-gray-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
+                        <span
+                            class="absolute w-72 h-32 -top-8 -left-4 bg-gray-600 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
+                        <span
+                            class="group-hover:opacity-100 group-hover:duration-1000 duration-100  opacity-0 absolute top-4  z-10">View
+                            Gamemodes</span>
+                    </button>
+                </a>
+            </div>
+        </section>
+
+        <!-- Weapons Section -->
+        <section id="weapons"
+            class="h-screen w-full relative z-0 flex items-center px-4 md:px-10 section-mobile md:section-desktop">
+            
+            <div class="absolute left-0 top-0 h-full -z-10 bg-image-desktop hidden md:block">
+                
+                <img src="../assets/img/fondoarmas.webp" alt="Valorant Weapons"
+                    class="object-cover h-full w-full image-slide-left" />
+            </div>
+            
+            <img src="../assets/img/fondoarmas.webp" alt="Valorant Weapons"
+                class="bg-image-mobile md:hidden image-fade-scale" />
+
+            <div
+                class="section-content right-aligned flex flex-col justify-center items-end gap-6 md:gap-24 z-20 text-right md:mr-44 relative">
+                <h2 class="text-white text-4xl md:text-6xl font-extrabold title-reveal stagger-1">MASTER THE ARMORY</h2>
+                <h3
+                    class="text-lg md:text-xl lg:text-3xl font-semibold uppercase text-gray-300 fade-in-right stagger-2">
+                    PRECISION. POWER.
+                    PERSONALITY.</h3>
+                <p class="text-gray-300 max-w-md leading-relaxed fade-in-right stagger-3">
+                    Valorant's arsenal ranges from nimble sidearms to deadly sniper rifles. Each weapon feels distinct,
+                    with its own recoil, rhythm, and role. Learn the nuances, choose your loadout wisely, and dominate
+                    each round
+                    with the firepower that fits your strategy.
+                </p>
+                <a href="./armas.html" class="inline-block">
+                    <button
+                        class="cta-button  h-14 md:h-16 w-48 md:w-64 p-2 overflow-hidden relative bg-gray-800 text-white border-none flex items-center justify-center rounded-md text-2xl font-bold cursor-pointer z-10 group scale-in stagger-4"
+                        style="padding: 0;">
+                        Weapons
+                        <span
+                            class="absolute w-72 h-32 -top-8 -left-4 bg-gray-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
+                        <span
+                            class="absolute w-72 h-32 -top-8 -left-4 bg-gray-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
+                        <span
+                            class="absolute w-72 h-32 -top-8 -left-4 bg-gray-600 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
+                        <span
+                            class="group-hover:opacity-100 group-hover:duration-1000 duration-100  justify-center text-center opacity-0 absolute top-4  z-10">View
+                            All Weapons</span>
+                    </button>
+                </a>
+            </div>
+        </section>
+    </main>
+
     
+
 </body>
 </html>
