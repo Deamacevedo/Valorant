@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentes</title>
+    <title>Mapas Jugables - Valorant</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
-<body class="bg-cover bg-fixed bg-no-repeat bg-gray-900 min-h-screen -z-30 "
+<body class="bg-cover bg-fixed bg-no-repeat bg-gray-900 min-h-screen"
     style="background-image: url('../assets/img/fondoprincipal.webp')">
+
     <header
         class="fixed top-0 left-0 w-full h-[100px] px-8 md:px-28 flex items-center justify-between z-50 transition-all duration-300">
         <!-- Logo -->
@@ -47,16 +48,38 @@
         </div>
     </header>
 
-    <section id="agentes" class="py-24 px-16">
-        <h2 class="section-title justify-start text-center text-stone-200 text-7xl font-bold" 
-        style=" font-family: 'Montserrat' ;">YOUR
-            AGENTS</h2>
-        <div id="agentes-grid" class="grid grid-cols-6 gap-10 justify-items-center "></div>
-        <!-- Aquí se llenará dinámicamente con JS -->
+    <section class="py-24 px-16">
+        <h2 class="section-title justify-start text-center text-stone-200 text-7xl font-bold"
+            style="font-family: 'Montserrat';">MAPAS JUGABLES</h2>
+
+        <div id="maps-container"
+            class="p-2 sm:px-6 md:px-48 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-full mx-auto">
+            <!-- Mensaje de carga inicial -->
+            <div id="loading" class="col-span-full flex flex-col items-center py-12">
+                <div class="loading-spinner h-12 w-12 border-4 border-blue-500/30 rounded-full mb-4"></div>
+                <p class="text-blue-300 text-lg">Cargando mapas...</p>
+            </div>
+            <!-- Mensaje de error -->
+            <div id="error" class="hidden col-span-full text-center py-12">
+                <div class="text-red-400 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <p class="text-xl mt-2" id="error-message"></p>
+                </div>
+                <button onclick="loadPlayableMaps()"
+                    class="mt-4 px-6 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                    Reintentar
+                </button>
+            </div>
         </div>
     </section>
 
-    <script src="../javascript/agentes.js"></script>
+
+
+    <script src="../javascript/maps.js"></script>
 </body>
 
 </html>

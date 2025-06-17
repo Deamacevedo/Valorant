@@ -393,27 +393,107 @@ body.no-scroll {
 
 /* Seccion Agentes */
 @media screen and (max-width: 768px) {
-            #agentes-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                /* 2 columnas en móvil */
-                gap: 1rem;
-                padding: 0 1rem;
-            }
+    #agentes-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columnas en móvil */
+        gap: 1rem;
+        padding: 0 1rem;
+    }
 
-            .agent-card {
-                width: 100% !important;
-                /* Fuerza que ocupe todo el espacio */
-                height: auto !important;
-            }
+    .agent-card {
+        width: 100% !important;
+        /* Fuerza que ocupe todo el espacio */
+        height: auto !important;
+    }
 
-            .agent-card img {
-                width: 100%;
-                height: auto;
-                object-fit: contain;
-            }
+    .agent-card img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
 
-            .agent-card p {
-                font-size: 1rem;
-            }
-        }
+    .agent-card p {
+        font-size: 1rem;
+    }
+}
+
+/* Seccion mapas */
+
+.map-card {
+    perspective: 1000px;
+    cursor: pointer;
+    /* Cambia el cursor */
+}
+
+.map-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s ease;
+    /* Transición más suave */
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.map-card:hover .map-inner {
+    transform: scale(1.03);
+    /* Solo escala al hover */
+}
+
+.map-card.flipped .map-inner {
+    transform: rotateY(180deg) scale(1.03);
+    /* Flip al click */
+}
+
+.map-front,
+.map-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.map-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 32, 44, 0.9) 100%);
+}
+
+.loading-spinner {
+    border-top-color: #3B82F6;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Mejorar separación y presentación de las cards */
+#maps-container>.map-card {
+    margin: 0.5rem;
+    min-height: 320px;
+    max-width: 100%;
+    display: flex;
+}
+
+@media (min-width: 640px) {
+    #maps-container>.map-card {
+        min-height: 340px;
+    }
+}
+
+@media (min-width: 768px) {
+    #maps-container>.map-card {
+        min-height: 360px;
+    }
+}
+
+/* Seccion  */
