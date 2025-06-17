@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapas Jugables - Valorant</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="bg-cover bg-fixed bg-no-repeat bg-gray-900 min-h-screen"
+    style="background-image: url('../assets/img/fondoprincipal.webp')">
+
+    <header
+        class="fixed top-0 left-0 w-full h-[100px] px-8 md:px-28 flex items-center justify-between z-50 transition-all duration-300">
+        <!-- Logo -->
+        <a href="../index.html">
+            <img class="w-auto h-[50px]" src="../assets/img/Logoinicio.png" alt="Valorant Logo" />
+        </a>
+
+        <!-- Menú Desktop -->
+        <nav class="desktop-nav hidden md:flex space-x-6" style="font-family: 'Tungsten';">
+            <a href="./agentes.html"
+                class="text-white text-3xl lg:text-5xl font-normal  hover:text-red-500 transition-colors duration-300">Agents</a>
+            <a href="./mapas.html"
+                class="text-white text-3xl lg:text-5xl font-normal  hover:text-red-500 transition-colors duration-300">Maps</a>
+            <a href="./rankings.html"
+                class="text-white text-3xl lg:text-5xl font-normal  hover:text-red-500 transition-colors duration-300">Competitive</a>
+            <a href="./gamemodes.html"
+                class="text-white text-3xl lg:text-5xl font-normal  hover:text-red-500 transition-colors duration-300">Gamemodes</a>
+            <a href="./armas.html"
+                class="text-white text-3xl lg:text-5xl font-normal  hover:text-red-500 transition-colors duration-300">Weapons</a>
+        </nav>
+
+        <!-- Botón Hamburguesa -->
+        <button class="hamburger-btn md:hidden" id="menu-toggle">
+            ☰
+        </button>
+
+        <!-- Menú Mobile -->
+        <div class="mobile-menu md:hidden flex" id="mobile-menu">
+            <a href="./agentes.html" class="nav-link">Agents</a>
+            <a href="./maps.html" class="nav-link">Maps</a>
+            <a href="./rankings.html" class="nav-link">Competitive</a>
+            <a href="./gamemodes.html" class="nav-link">Gamemodes</a>
+            <a href="./armas.html" class="nav-link">Weapons</a>
+        </div>
+    </header>
+
+    <section id="gamemodes" class="py-24 px-16">
+        <h2 class="section-title justify-start text-center text-stone-200 text-7xl font-bold"
+            style="font-family: 'Montserrat';">CHOOSE YOUR BATTLE</h2>
+
+        <div id="gamemode-icons" class="grid grid-cols-1 md:grid-cols-4 gap-12 justify-items-center mx-20 md:mt-40 ">
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="gamemode-modal" class="fixed inset-0 bg-black/70 items-center justify-center z-50 hidden">
+        <div
+            class="modal-content bg-gray-900 text-white rounded-xl p-6 w-11/12 max-w-xl relative shadow-xl flex flex-col items-center">
+            <button id="close-modal"
+                class="absolute top-4 right-4 text-xl font-bold hover:text-red-400 hover:cursor-pointer">&times;</button>
+            <h3 id="modal-title" class="text-3xl font-bold mb-4"></h3>
+            <p id="modal-duration" class="text-base font-semibold mb-2"></p>
+            <p id="modal-description" class="text-center text-sm leading-relaxed"></p>
+        </div>
+    </div>
+
+    <script src="../javascript/gamemode.js"></script>
+
+</body>
+
+</html>
