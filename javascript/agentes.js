@@ -28,38 +28,43 @@ menuToggle.addEventListener('click', () => {
 });
 
 // Cerrar menú al hacer click en enlaces
+// JavaScript corregido para manejar los enlaces
 document.querySelectorAll('.mobile-menu a').forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
+        // Solo prevenir el comportamiento por defecto si es un enlace interno (#)
+        if (link.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            
+            // Restaurar body primero
+            body.classList.remove('no-scroll');
+            body.style.removeProperty('overflow');
+            body.style.removeProperty('position');
+            body.style.removeProperty('top');
+            body.style.removeProperty('width');
 
-        // Restaurar body primero
-        body.classList.remove('no-scroll');
-        body.style.removeProperty('overflow');
-        body.style.removeProperty('position');
-        body.style.removeProperty('top');
-        body.style.removeProperty('width');
+            // Cerrar menú
+            mobileMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
 
-        // Cerrar menú
-        mobileMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
+            // Scroll suave al destino después de restaurar el body
+            setTimeout(() => {
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
 
-        // Scroll suave al destino después de restaurar el body
-        setTimeout(() => {
-            const targetId = link.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
 
-            if (targetElement) {
-                const headerHeight = document.querySelector('header').offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
 
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-
-                history.pushState(null, null, targetId);
-            }
-        }, 20);
+                    history.pushState(null, null, targetId);
+                }
+            }, 20);
+        }
+        // Si no es un fragmento (#), dejar que el enlace funcione normalmente
     });
 });
 // Efecto scroll del header
