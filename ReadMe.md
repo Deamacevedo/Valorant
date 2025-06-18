@@ -4,7 +4,7 @@ Este proyecto es una **landing page** interactiva basada en el videojuego **Valo
 
 ---
 
-## 🌐 Demo en línea
+## 🌐 Demo en línea 🚀 ¿Cómo ejecutarlo?
 
 Puedes ver el portafolio publicado en GitHub Pages aquí:  
 👉 [https://deamacevedo.github.io/Valorant/](https://deamacevedo.github.io/Valorant/)  
@@ -36,10 +36,15 @@ html/
 ├── gamemodes.html
 ├── mapas.html
 ├── rankings.html
+javascript
+├── agents.js
+├── mapas.js
+├── weapons.js
+├── gamemodes.js
 index.html
 ReadMe.md
-main.js          ← (Pendiente por crear)
-styles.css       ← (Pendiente por crear)
+main.js          
+styles.css       
 ```
 
 ---
@@ -54,18 +59,7 @@ styles.css       ← (Pendiente por crear)
 
 ---
 
-## 🚀 ¿Cómo ejecutarlo?
 
-
-
----
-
-## 📌 Archivos por agregar
-
-- `main.js`: aquí estará la lógica principal para consumir la API y mostrar dinámicamente los datos.
-- `styles.css`: para estilos personalizados adicionales al diseño base.
-
----
 
 ## 👨‍💻 Autor
 
