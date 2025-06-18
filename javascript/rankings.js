@@ -68,14 +68,20 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
     });
 });
 // Efecto scroll del header
-// window.addEventListener('scroll', () => {
-//     const header = document.querySelector('header');
-//     if (window.scrollY > 50) {
-//         header.classList.add('scrolled-header');
-//     } else {
-//         header.classList.remove('scrolled-header');
-//     }
-// });
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    // Solo activar en desktop (ejemplo: ancho mínimo 768px)
+    if (window.innerWidth >= 768) {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled-header');
+        } else {
+            header.classList.remove('scrolled-header');
+        }
+    } else {
+        // En móviles, asegurarse de quitar la clase si existe
+        header.classList.remove('scrolled-header');
+    }
+});
 
 async function loadRanks() {
             const res = await fetch('https://valorant-api.com/v1/competitivetiers');
